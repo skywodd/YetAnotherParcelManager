@@ -5,4 +5,6 @@
 + create 
 
 ---
-Release date: 16 / 02 / 2014
+## Release date 
+
+1.0 -> 16 / 02 / 2014
