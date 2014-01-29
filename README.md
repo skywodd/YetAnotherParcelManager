@@ -10,3 +10,10 @@
 ### Development state
 
 None.
+
+---
+### Dependencies
+
+
++ ORMlite: http://ormlite.com/
+
