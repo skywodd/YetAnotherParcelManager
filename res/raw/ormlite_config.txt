@@ -1,0 +1,27 @@
+#
+# generated on 2014/02/05 08:46:10
+#
+# --table-start--
+dataClass=net.skywodd.yetanotherparcelmanager.models.Parcel
+tableName=parcels
+# --table-fields-start--
+# --field-start--
+fieldName=id
+generatedId=true
+# --field-end--
+# --field-start--
+fieldName=name
+id=true
+# --field-end--
+# --field-start--
+fieldName=growing
+# --field-end--
+# --field-start--
+fieldName=lastGrowing
+# --field-end--
+# --field-start--
+fieldName=surface
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
