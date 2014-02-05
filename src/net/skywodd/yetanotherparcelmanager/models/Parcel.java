@@ -16,6 +16,8 @@
  */
 package net.skywodd.yetanotherparcelmanager.models;
 
+import java.net.URI;
+
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -49,6 +51,22 @@ public class Parcel {
 	/** Parcel surface */
 	@DatabaseField
 	private int surface;
+
+	/** Parcel image */
+	@DatabaseField
+	private URI image;
+
+	/** Parcel GPS latitude */
+	@DatabaseField
+	private double latitude;
+
+	/** Parcel GPS longitude */
+	@DatabaseField
+	private double longitude;
+
+	/** Parcel address */
+	@DatabaseField
+	private String address;
 
 	/**
 	 * Default constructor for ORMLite ONLY.
@@ -174,6 +192,82 @@ public class Parcel {
 		this.surface = surface;
 	}
 
+	/**
+	 * Get the parcel image URI.
+	 * 
+	 * @return The parcel image URI.
+	 */
+	public URI getImage() {
+		return image;
+	}
+
+	/**
+	 * Set the parcel image URI.
+	 * 
+	 * @param image
+	 *            The new parcel image URI.
+	 */
+	public void setImage(URI image) {
+		this.image = image;
+	}
+
+	/**
+	 * Get the parcel GPS latitude.
+	 * 
+	 * @return The parcel GPS latitude.
+	 */
+	public double getLatitude() {
+		return latitude;
+	}
+
+	/**
+	 * Set the parcel GPS latitude.
+	 * 
+	 * @param latitude
+	 *            The new parcel GPS latitude.
+	 */
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
+	}
+
+	/**
+	 * Get the parcel GPS longitude.
+	 * 
+	 * @return The parcel GPS longitude.
+	 */
+	public double getLongitude() {
+		return longitude;
+	}
+
+	/**
+	 * Set the parcel GPS longitude.
+	 * 
+	 * @param longitude
+	 *            The new parcel GPS longitude.
+	 */
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
+	}
+
+	/**
+	 * Get the parcel address.
+	 * 
+	 * @return The parcel address.
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * Set the parcel address.
+	 * 
+	 * @param address
+	 *            The new parcel address.
+	 */
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -192,6 +286,14 @@ public class Parcel {
 		builder.append(lastGrowing);
 		builder.append(", surface=");
 		builder.append(surface);
+		builder.append(", image=");
+		builder.append(image);
+		builder.append(", latitude=");
+		builder.append(latitude);
+		builder.append(", longitude=");
+		builder.append(longitude);
+		builder.append(", address=");
+		builder.append(address);
 		builder.append("]");
 		return builder.toString();
 	}

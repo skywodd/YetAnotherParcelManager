@@ -1,5 +1,5 @@
 #
-# generated on 2014/02/05 08:46:10
+# generated on 2014/02/05 09:27:17
 #
 # --table-start--
 dataClass=net.skywodd.yetanotherparcelmanager.models.Parcel
@@ -21,6 +21,18 @@ fieldName=lastGrowing
 # --field-end--
 # --field-start--
 fieldName=surface
+# --field-end--
+# --field-start--
+fieldName=image
+# --field-end--
+# --field-start--
+fieldName=latitude
+# --field-end--
+# --field-start--
+fieldName=longitude
+# --field-end--
+# --field-start--
+fieldName=address
 # --field-end--
 # --table-fields-end--
 # --table-end--

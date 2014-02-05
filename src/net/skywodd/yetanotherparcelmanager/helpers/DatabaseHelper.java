@@ -25,7 +25,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	private static final String DATABASE_NAME = "parcels.db";
 
 	/** Database version number */
-	private static final int DATABASE_VERSION = 1;
+	private static final int DATABASE_VERSION = 2;
 
 	// the DAO object we use to access the Parcel table
 	private Dao<Parcel, Integer> parcelDao = null;
@@ -84,9 +84,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * create it or just give the cached value.
 	 */
 	public Dao<Parcel, Integer> getDao() throws SQLException {
-		if (parcelDao == null) {
+		if (parcelDao == null)
 			parcelDao = getDao(Parcel.class);
-		}
 		return parcelDao;
 	}
 
@@ -96,9 +95,8 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	 * RuntimeExceptionDao only through RuntimeExceptions.
 	 */
 	public RuntimeExceptionDao<Parcel, Integer> getParcelDao() {
-		if (parcelRuntimeDao == null) {
+		if (parcelRuntimeDao == null)
 			parcelRuntimeDao = getRuntimeExceptionDao(Parcel.class);
-		}
 		return parcelRuntimeDao;
 	}
 
