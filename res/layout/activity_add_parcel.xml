@@ -4,70 +4,102 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!-- Add parcel activity layout. -->
+
+
+    <!-- Title of the activity. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title_add_parcel"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <!-- Sub layout for the parcel name. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Label for the parcel name. -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_parcel_name" />
 
+        <!-- Parcel name. -->
+
         <EditText
             android:id="@+id/tf_parcel_name"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:inputType="text" >
         </EditText>
     </LinearLayout>
 
+    <!-- Sub layout for the parcel growing. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Label for the parcel growing. -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_parcel_culture_actual" />
+            android:text="@string/label_parcel_actual_culture" />
+
+        <!-- Parcel growing. -->
 
         <Spinner
-            android:id="@+id/sp_parcel_culture_actual"
+            android:id="@+id/sp_parcel_actual_culture"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/array_cultures_types" />
     </LinearLayout>
+
+    <!-- Sub layout for the previous parcel growing. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Label for the previous parcel growing. -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/label_parcel_culture_last" />
+            android:text="@string/label_parcel_previous_culture" />
+
+        <!-- Parcel previous growing. -->
 
         <Spinner
-            android:id="@+id/sp_parcel_culture_last"
+            android:id="@+id/sp_parcel_previous_culture"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:entries="@array/array_cultures_types" />
     </LinearLayout>
+
+    <!-- Sub layout for the parcel surface. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Label for the previous parcel surface. -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_parcel_surface" />
+
+        <!-- Parcel surface. -->
 
         <NumberPicker
             android:id="@+id/np_parcel_surface"
@@ -75,10 +107,12 @@
             android:layout_height="wrap_content" />
     </LinearLayout>
 
+    <!-- Add parcel button. -->
+
     <Button
-        android:id="@+id/btn_parcel_ajouter"
+        android:id="@+id/btn_add_parcel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_text_parcel_ajouter" />
+        android:text="@string/btn_label_add_parcel" />
 
 </LinearLayout>

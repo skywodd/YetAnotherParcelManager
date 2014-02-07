@@ -4,33 +4,49 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!-- Details parcel layout. Display all informations about a parcel. -->
+
+
+    <!-- Name of the parcel. NOTE: move to action bar title ? -->
+
     <TextView
         android:id="@+id/tv_info_parcel_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text=""
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
+    <!-- Image of the parcel. -->
+
     <ImageView
-        android:id="@+id/image_parcel_info"
+        android:id="@+id/img_parcel_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/your_father" />
+        android:layout_gravity="center_vertical"
+        android:contentDescription="@string/label_parcel_image"
+        android:src="@drawable/ic_launcher" />
+
+    <!-- Sub layout for all parcel's informations. NOTE: move to grid layout. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
+        <!-- Row layout -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
+            <!-- Label for the actual parcel culture. -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_parcel_culture_actual" />
+                android:text="@string/label_parcel_actual_culture" />
+
+            <!-- Actual parcel culture. -->
 
             <TextView
                 android:id="@+id/tv_info_culture_actual"
@@ -39,15 +55,21 @@
                 android:text="" />
         </LinearLayout>
 
+        <!-- Row layout -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
 
+            <!-- Label for the previous parcel culture. -->
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/label_parcel_culture_last" />
+                android:text="@string/label_parcel_previous_culture" />
+
+            <!-- Previous parcel culture. -->
 
             <TextView
                 android:id="@+id/tv_info_culture_last"
@@ -56,18 +78,24 @@
                 android:text="" />
         </LinearLayout>
 
+        <!-- Row layout -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal" >
+
+            <!-- Label for the parcel surface. -->
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/label_parcel_surface" />
 
+            <!-- Parcel surface. -->
+
             <TextView
-        		android:id="@+id/tv_info_parcel_surface"
+                android:id="@+id/tv_info_parcel_surface"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="" />
