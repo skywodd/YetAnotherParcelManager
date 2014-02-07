@@ -4,17 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <!--  -->
-    
+    <!-- Control activity layout. -->
+
+
+    <!-- Label for the control density. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_control_density" />
 
+    <!-- Sub layout for the control density. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Control density. -->
 
         <EditText
             android:id="@+id/tf_control_density"
@@ -23,21 +30,29 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- Control density unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_control_density_unit" />
     </LinearLayout>
 
+    <!-- Label for the control gap. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_control_gap" />
 
+    <!-- Sub layout for the control gap. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Control gap. -->
 
         <EditText
             android:id="@+id/tf_control_gap"
@@ -46,26 +61,36 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- Control gap unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_control_gap_unit" />
     </LinearLayout>
 
+    <!-- Label for the control ranks. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_control_ranks" />
+
+    <!-- Sub layout for the control ranks. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <!-- Control ranks. -->
+
         <TextView
             android:id="@+id/tv_control_rank"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <!-- Control ranks unit. -->
 
         <TextView
             android:layout_width="match_parent"
@@ -73,20 +98,28 @@
             android:text="@string/label_control_ranks_unit" />
     </LinearLayout>
 
+    <!-- Label for the control grains. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_control_grains" />
+
+    <!-- Sub layout for the control grains. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <!-- Control grains. -->
+
         <TextView
             android:id="@+id/tv_control_grains"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <!-- Control grains unit. -->
 
         <TextView
             android:layout_width="match_parent"

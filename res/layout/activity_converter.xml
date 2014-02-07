@@ -4,15 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!-- Converter activity layout. -->
+
+
+    <!-- Label for the converter density. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_converter_density" />
 
+    <!-- Sub layout for the converter density. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Converter density. -->
 
         <EditText
             android:id="@+id/tf_converter_density"
@@ -21,21 +30,29 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- Converter density unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_converter_density_unit" />
     </LinearLayout>
 
+    <!-- Label for the converter PMG. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_converter_pmg" />
 
+    <!-- Sub layout for the converter PMG. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- PMG. -->
 
         <EditText
             android:id="@+id/tf_converter_pmg"
@@ -44,26 +61,36 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- PMG unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_converter_pmg_unit" />
     </LinearLayout>
 
+    <!-- Label for the converter weight. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_converter_weight" />
+
+    <!-- Sub layout for the converter weight. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <!-- Converter weight. -->
+
         <TextView
             android:id="@+id/tv_converter_weight"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <!-- Converter weight unit. -->
 
         <TextView
             android:layout_width="match_parent"
@@ -71,16 +98,22 @@
             android:text="@string/label_converter_weight_unit" />
     </LinearLayout>
 
+    <!-- Sub layout for the buttons. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Button to choice the parcel. -->
 
         <Button
             android:id="@+id/btn_converter_parcel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/btn_label_choice_parcel" />
+
+        <!-- Button to go into command view. -->
 
         <Button
             android:id="@+id/btn_converter_command"

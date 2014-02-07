@@ -16,6 +16,7 @@
     <string name="btn_label_choice_parcel">Choix parcelle</string>
     <string name="btn_label_go_command">Commande</string>
     <string name="btn_label_command_control">Contrôle</string>
+    <string name="btn_label_command_parcels">Parcelles</string>
     
     <!-- Labels -->
     <string name="title_add_parcel">Ajouter Parcelle</string>

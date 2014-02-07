@@ -4,15 +4,24 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
+    <!-- Command activity layout. -->
+
+
+    <!-- Label for the command weight. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_command_weight" />
 
+    <!-- Sub layout for the command weight. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Command weight. -->
 
         <EditText
             android:id="@+id/tf_command_weight"
@@ -21,21 +30,29 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- Command weight unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_command_weight_unit" />
     </LinearLayout>
 
+    <!-- Label for the command surface. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_command_surface" />
 
+    <!-- Sub layout for the command surface. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Command surface. -->
 
         <EditText
             android:id="@+id/tf_command_surface"
@@ -44,27 +61,37 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- Command surface unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_command_surface_unit" />
 
+        <!-- Command parcel button. -->
+
         <Button
             android:id="@+id/btn_command_parcels"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="image" />
+            android:text="@string/btn_label_command_parcels" />
     </LinearLayout>
+
+    <!-- Label for the command packaging. -->
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_command_packaging" />
 
+    <!-- Sub layout for the command packaging. -->
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
+
+        <!-- Command packaging. -->
 
         <EditText
             android:id="@+id/tf_command_packaging"
@@ -73,32 +100,44 @@
             android:inputType="number" >
         </EditText>
 
+        <!-- ommand packaging unit. -->
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_command_packaging_unit" />
     </LinearLayout>
 
+    <!-- Label for the command order. -->
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/label_command_order" />
+
+    <!-- Sub layout for the command order. -->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal" >
 
+        <!-- Command order count. -->
+
         <TextView
             android:id="@+id/tv_command_bags"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
+        <!-- Command order label. -->
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/label_command_bags" />
     </LinearLayout>
+
+    <!-- Command button. -->
 
     <Button
         android:id="@+id/btn_command_control"
