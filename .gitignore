@@ -2,12 +2,11 @@
 ## Eclipse
 #################
 
-*.pydevproject
 #.project
 .metadata
 bin/
 tmp/
-gen/*
+gen/
 *.tmp
 *.bak
 *.swp
@@ -17,14 +16,19 @@ local.properties
 #.settings/
 .loadpath
 
+# Android
+*.apk
+*.ap_
+*.dex
+*.class
+
+proguard/
+
 # External tool builders
 .externalToolBuilders/
 
 # Locally stored "Eclipse launch configurations"
 *.launch
-
-# CDT-specific
-.cproject
 
 # PDT-specific
 .buildpath
