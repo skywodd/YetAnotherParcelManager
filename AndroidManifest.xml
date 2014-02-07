@@ -22,6 +22,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="net.skywodd.yetanotherparcelmanager.activities.parcels.AddParcelActivity"
+            android:label="@string/title_activity_add" >
+        </activity>
+        <activity
+            android:name="net.skywodd.yetanotherparcelmanager.activities.menus.CommandMenuActivity"
+            android:label="@string/title_activity_command" >
+        </activity>
+        <activity
+            android:name="net.skywodd.yetanotherparcelmanager.activities.menus.ControlMenuActivity"
+            android:label="@string/title_activity_control" >
+        </activity>
+        <activity
+            android:name="net.skywodd.yetanotherparcelmanager.activities.menus.ConverterMenuActivity"
+            android:label="@string/title_activity_converter" >
+        </activity>
+        <activity
+            android:name="net.skywodd.yetanotherparcelmanager.activities.parcels.InfoParcelActivity"
+            android:label="@string/title_activity_info" >
+        </activity>
     </application>
 
 </manifest>
