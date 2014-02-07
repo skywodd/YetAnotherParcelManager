@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+    <!-- Cultures types array. -->
+
+    <string-array name="array_cultures_types">
+        <item>Autre</item>
+        <item>Blé</item>
+        <item>Maïs</item>
+        <item>Tournesol</item>
+        <item>Colza</item>
+        <item>Orge</item>
+        <item>Prairie</item>
+    </string-array>
+
+</resources>
