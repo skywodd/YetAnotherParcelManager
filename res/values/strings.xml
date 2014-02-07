@@ -4,5 +4,50 @@
     <string name="app_name">Yet Another Parcel Manager</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
+    <string name="title_add_parcel">Ajouter Parcelle</string>
+    <string name="label_parcel_name">Nom :</string>
+    <string name="label_parcel_culture_actual">Culture :</string>
+    <string name="label_parcel_culture_last">Culture précédente :</string>
+    <string name="label_parcel_surface">Surface :</string>
+    <string name="btn_text_parcel_ajouter">Ajouter</string>
+    <string name="action_parcel">Parcelles</string>
+    <string name="action_converter">Convertisseur</string>
+    <string name="action_command">Commande</string>
+    <string name="action_control">Contrôle</string>
+    <string name="label_converter_density">Densité de semis :</string>
+    <string name="label_converter_density_unit">grains/m²</string>
+    <string name="label_converter_pmg">PMG :</string>
+    <string name="label_converter_pmg_unit">g</string>
+    <string name="label_converter_weight">Poids de semence nécessaires :</string>
+    <string name="label_converter_weight_unit">Kg/ha</string>
+    <string name="btn_text_converter_parcel">Choix parcelle</string>
+    <string name="btn_text_converter_command">Commande</string>
+    <string name="label_control_density">Densité de semis :</string>
+    <string name="label_control_density_unit">grains/m²</string>
+    <string name="label_control_gap">Ecartement :</string>
+    <string name="label_control_gap_unit">cm</string>
+    <string name="label_control_ranks">Nombre de rangs / m²</string>
+    <string name="label_control_ranks_unit">rangs/m²</string>
+    <string name="label_control_grains">Nombre de grains / m²</string>
+    <string name="label_control_grains_unit">grains/m²</string>
+	<string name="label_command_weight">Poids de semences nécessaires :</string>
+	<string name="label_command_weight_unit">Kg/ha</string>
+	<string name="label_command_surface">Surface :</string>
+	<string name="label_command_surface_unit">ha</string>
+	<string name="label_command_packaging">Conditionnement :</string>
+	<string name="label_command_packaging_unit">Kg/sac</string>
+	<string name="label_command_order">Nombre à commander :</string>
+	<string name="label_command_bags">sacs</string>
+	<string name="btn_command_control">Contrôle</string>
+     
+    <string-array name="cultures_array">
+        <item>Blé</item>
+        <item>Maïs</item>
+        <item>Tournesol</item>
+        <item>Colza</item>
+        <item>Orge</item>
+        <item>Prairie</item>
+        <item>Autre</item>
+    </string-array>
 
 </resources>

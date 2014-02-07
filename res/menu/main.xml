@@ -1,9 +1,28 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_parcel"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:icon="@drawable/land_scape"
+        android:title="@string/action_parcel"/>
+    <item
+        android:id="@+id/action_converter"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:icon="@drawable/land_scape"
+        android:title="@string/action_converter"/>
+    <item
+        android:id="@+id/action_command"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:icon="@drawable/land_scape"
+        android:title="@string/action_command"/>
+    <item
+        android:id="@+id/action_control"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:icon="@drawable/land_scape"
+        android:title="@string/action_control"/>
 
 </menu>
