@@ -80,13 +80,13 @@
             android:id="@+id/btn_converter_parcel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_text_converter_parcel" />
+            android:text="@string/btn_label_choice_parcel" />
 
         <Button
             android:id="@+id/btn_converter_command"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/btn_text_converter_command" />
+            android:text="@string/btn_label_go_command" />
     </LinearLayout>
 
 </LinearLayout>

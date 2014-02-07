@@ -104,6 +104,6 @@
         android:id="@+id/btn_command_control"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/btn_command_control" />
+        android:text="@string/btn_label_command_control" />
 
 </LinearLayout>
