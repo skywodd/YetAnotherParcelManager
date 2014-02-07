@@ -82,6 +82,7 @@ public class ListParcelActivity extends AbstractBaseActivity {
 		super.onCreateOptionsMenu(menu);
 		MenuInflater inflater = getMenuInflater();
 	    inflater.inflate(R.menu.menu_add, menu);
+	    menu.removeItem(R.id.action_parcel);
 		return true;
 
 	}

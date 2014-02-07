@@ -18,6 +18,7 @@
 package net.skywodd.yetanotherparcelmanager.activities;
 
 import net.skywodd.yetanotherparcelmanager.R;
+import net.skywodd.yetanotherparcelmanager.activities.menus.CommandMenuActivity;
 import net.skywodd.yetanotherparcelmanager.activities.menus.ControlMenuActivity;
 import net.skywodd.yetanotherparcelmanager.activities.menus.ConverterMenuActivity;
 import net.skywodd.yetanotherparcelmanager.activities.parcels.ListParcelActivity;
@@ -127,7 +128,7 @@ public class AbstractBaseActivity extends OrmLiteBaseActivity<DatabaseHelper> {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	        case R.id.action_command:
-	        	intent = new Intent(this, ListParcelActivity.class);
+	        	intent = new Intent(this, CommandMenuActivity.class);
 	    	    startActivity(intent);
 	            return true;
 	        case R.id.action_control:
