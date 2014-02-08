@@ -1,29 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
+    <!-- Main default action menu. -->
+
+
+    <!-- Open parcel listing action. -->
+
     <item
         android:id="@+id/action_parcel"
+        android:icon="@drawable/ic_action_picture"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:icon="@drawable/land_scape"
         android:title="@string/action_parcel"/>
+
+    <!-- Open converter action. -->
+
     <item
         android:id="@+id/action_converter"
+        android:icon="@drawable/ic_action_picture"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:icon="@drawable/land_scape"
         android:title="@string/action_converter"/>
+
+    <!-- Open command action. -->
+
     <item
         android:id="@+id/action_command"
+        android:icon="@drawable/ic_action_picture"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:icon="@drawable/land_scape"
         android:title="@string/action_command"/>
+
+    <!-- Open control action. -->
+
     <item
         android:id="@+id/action_control"
+        android:icon="@drawable/ic_action_picture"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:icon="@drawable/land_scape"
         android:title="@string/action_control"/>
 
 </menu>
