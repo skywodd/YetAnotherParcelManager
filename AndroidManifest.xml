@@ -14,7 +14,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="net.skywodd.yetanotherparcelmanager.activities.parcels.ListParcelActivity"
+            android:name="net.skywodd.yetanotherparcelmanager.activities.ListParcelActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,24 +23,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="net.skywodd.yetanotherparcelmanager.activities.parcels.AddParcelActivity"
+            android:name="net.skywodd.yetanotherparcelmanager.activities.AddParcelActivity"
             android:label="@string/title_activity_add" >
         </activity>
         <activity
-            android:name="net.skywodd.yetanotherparcelmanager.activities.menus.CommandMenuActivity"
+            android:name="net.skywodd.yetanotherparcelmanager.activities.InfoParcelActivity"
+            android:label="@string/title_activity_info" >
+        </activity>
+        <activity
+            android:name="net.skywodd.yetanotherparcelmanager.activities.CommandActivity"
             android:label="@string/title_activity_command" >
         </activity>
         <activity
-            android:name="net.skywodd.yetanotherparcelmanager.activities.menus.ControlMenuActivity"
+            android:name="net.skywodd.yetanotherparcelmanager.activities.ControlActivity"
             android:label="@string/title_activity_control" >
         </activity>
         <activity
-            android:name="net.skywodd.yetanotherparcelmanager.activities.menus.ConverterMenuActivity"
+            android:name="net.skywodd.yetanotherparcelmanager.activities.ConverterActivity"
             android:label="@string/title_activity_converter" >
-        </activity>
-        <activity
-            android:name="net.skywodd.yetanotherparcelmanager.activities.parcels.InfoParcelActivity"
-            android:label="@string/title_activity_info" >
         </activity>
     </application>
 

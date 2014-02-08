@@ -15,11 +15,10 @@
  *   along with YetAnotherParcelManager. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.skywodd.yetanotherparcelmanager.activities.parcels;
+package net.skywodd.yetanotherparcelmanager.activities;
 
 import android.os.Bundle;
 import net.skywodd.yetanotherparcelmanager.R;
-import net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity;
 
 /**
  * This class manage the AddParcelActivity.

@@ -15,21 +15,19 @@
  *   along with YetAnotherParcelManager. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.skywodd.yetanotherparcelmanager.activities.menus;
+package net.skywodd.yetanotherparcelmanager.activities;
 
 import android.os.Bundle;
 import net.skywodd.yetanotherparcelmanager.R;
-import net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity;
 
 /**
- * This class manage ControlMenuActivity.
+ * This class manage the CommandMenuActivity.
  * 
  * @author Linkdelaudela
  * @version 1.0.0
  */
-public class ControlMenuActivity extends AbstractBaseActivity {
+public class CommandActivity extends AbstractBaseActivity {
 
-	
 	/*
 	 * (non-Javadoc)
 	 * @see net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity#onCreate(android.os.Bundle)
@@ -38,7 +36,7 @@ public class ControlMenuActivity extends AbstractBaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.activity_control);
+		setContentView(R.layout.activity_command);
 		
 	}
 }

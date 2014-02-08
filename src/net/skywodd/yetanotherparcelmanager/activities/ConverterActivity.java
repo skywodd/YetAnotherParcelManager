@@ -15,11 +15,10 @@
  *   along with YetAnotherParcelManager. If not, see <http://www.gnu.org/licenses/>.
  */
 
-package net.skywodd.yetanotherparcelmanager.activities.menus;
+package net.skywodd.yetanotherparcelmanager.activities;
 
 import android.os.Bundle;
 import net.skywodd.yetanotherparcelmanager.R;
-import net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity;
 
 /**
  * This class manage converterMenuActivity.
@@ -27,7 +26,7 @@ import net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity;
  * @author Linkdelaudela
  * @version 1.0.0
  */
-public class ConverterMenuActivity extends AbstractBaseActivity {
+public class ConverterActivity extends AbstractBaseActivity {
 	
 	
 	/*
