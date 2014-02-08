@@ -17,15 +17,18 @@
 package net.skywodd.yetanotherparcelmanager.helpers;
 
 import net.skywodd.yetanotherparcelmanager.R;
+import net.skywodd.yetanotherparcelmanager.activities.InfoParcelActivity;
 import net.skywodd.yetanotherparcelmanager.models.Parcel;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * Array adapter for the parcel list view.
@@ -80,6 +83,26 @@ public class ParcelAdapter extends ArrayAdapter<Parcel> {
 			LayoutInflater inflater = ((Activity) context).getLayoutInflater();
 			convertView = inflater.inflate(layoutResourceId, parent, false);
 
+			// Handle click (show details) 
+			convertView.setClickable(true);
+			convertView.setLongClickable(true); // For the context menu
+			convertView.setOnClickListener(new View.OnClickListener() {
+
+				@Override
+				public void onClick(View v) {
+					
+					// Get the associated holder
+					ParcelHolder ph = (ParcelHolder) v.getTag();
+					
+					// Craft the "show details" intent
+					Intent t = new Intent(context, InfoParcelActivity.class);
+					t.putExtra(InfoParcelActivity.EXTRA_PARCEL_ID, ph.targetID);
+					
+					// Broadcast the intent
+					context.startActivity(t);
+				}
+			});
+
 			// Create and populate a new container
 			holder = new ParcelHolder();
 			holder.txtName = (TextView) convertView
@@ -111,7 +134,8 @@ public class ParcelAdapter extends ArrayAdapter<Parcel> {
 				R.array.array_cultures_types)[p.getGrowing().ordinal()]);
 		if (p.getImage() != null)
 			holder.imgParcel.setImageURI(p.getImage());
-		else // Default image
+		else
+			// Default image
 			holder.imgParcel.setImageDrawable(context.getResources()
 					.getDrawable(R.drawable.ic_action_picture));
 
