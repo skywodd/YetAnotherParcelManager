@@ -10,6 +10,10 @@
     <string name="action_converter">Convertisseur</string>
     <string name="action_command">Commande</string>
     <string name="action_control">Contrôle</string>
+    <string name="action_add_parcel">Ajout Parcelle</string>
+    <string name="action_show">Afficher</string>
+    <string name="action_edit">Modifier</string>
+    <string name="action_delete">Supprimer</string>
 
     <!-- Buttons labels -->
     <string name="btn_label_add_parcel">Ajouter</string>
@@ -17,18 +21,19 @@
     <string name="btn_label_go_command">Commande</string>
     <string name="btn_label_command_control">Contrôle</string>
     <string name="btn_label_command_parcels">Parcelles</string>
+    <string name="btn_list_info">Image affichage infos parcelle</string>
 
-    <!-- Labels -->
-   <string name="title_activity_add">Ajout parcelle</string>
-   <string name="title_activity_command">Commande</string>
+    <!-- Titles -->
+    <string name="title_activity_add">Ajout parcelle</string>
+    <string name="title_activity_command">Commande</string>
     <string name="title_activity_control">Controle</string>
     <string name="title_activity_converter">Convertisseur</string>
     <string name="title_activity_info">Parcelle</string>
     <string name="title_header_parcel">Parcelles</string>
-    <string name="img_list_parcel">Image de la parcelle</string>
-    <string name="btn_list_info">Image affichage infos parcelle</string>
-    <string name="action_add_parcel">Ajout Parcelle</string>
     <string name="title_add_parcel">Ajouter Parcelle</string>
+    <string name="img_list_parcel">Image de la parcelle</string>
+
+    <!-- Labels -->
     <string name="label_parcel_name">Nom :</string>
     <string name="label_parcel_image">Image de la parcelle.</string>
     <string name="label_parcel_actual_culture">Culture :</string>
