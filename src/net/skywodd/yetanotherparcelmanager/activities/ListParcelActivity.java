@@ -30,12 +30,14 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * This class manage the ListParcelActivity, by getting the information from the
  * ORM.
  * 
  * @author Linkdelaudela
+ * @author skywodd
  * @version 1.0.0
  */
 public class ListParcelActivity extends AbstractBaseActivity {
@@ -55,18 +57,21 @@ public class ListParcelActivity extends AbstractBaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_parcel);
 
-		// Dummy data for testing purpose
+		// Query all known parcel data
+		// TODO remove and replace with ORM query
 		Parcel parcelData[] = new Parcel[] {
-				new Parcel("Test1", Growing.CORN, Growing.COLZA, 5, null, 0d,
+				new Parcel("Test1", Growing.BARLEY, Growing.COLZA, 5, null, 0d,
 						0d, "test1"),
 				new Parcel("Test2", Growing.CORN, Growing.COLZA, 5, null, 0d,
 						0d, "test2"),
-				new Parcel("Test3", Growing.CORN, Growing.COLZA, 5, null, 0d,
+				new Parcel("Test3", Growing.MEADOW, Growing.COLZA, 5, null, 0d,
 						0d, "test3"),
-				new Parcel("Test4", Growing.CORN, Growing.COLZA, 5, null, 0d,
-						0d, "test4"),
-				new Parcel("Test5", Growing.CORN, Growing.COLZA, 5, null, 0d,
+				new Parcel("Test4", Growing.SUNFLOWER, Growing.COLZA, 5, null,
+						0d, 0d, "test4"),
+				new Parcel("Test5", Growing.WHEAT, Growing.COLZA, 5, null, 0d,
 						0d, "test5") };
+		// parcelData = (Parcel[])
+		// getHelper().getParcelDao().queryForAll().toArray();
 
 		// Create the list view adapter for Parcel data.
 		ParcelAdapter adapter = new ParcelAdapter(this,
@@ -96,7 +101,7 @@ public class ListParcelActivity extends AbstractBaseActivity {
 
 		// Extend the default menu
 		MenuInflater inflater = getMenuInflater();
-		inflater.inflate(R.menu.menu_add, menu);
+		inflater.inflate(R.menu.menu_parcel_add, menu);
 		// Remove itself from the default menu
 		menu.removeItem(R.id.action_parcel);
 
@@ -135,14 +140,15 @@ public class ListParcelActivity extends AbstractBaseActivity {
 
 		// Handle context menu creation
 		switch (v.getId()) {
-		case R.id.list_parcel:
+		case R.id.list_parcel: // Display the list context menu
 			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
 			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
 			menu.setHeaderTitle(p.getName());
-			menu.add(Menu.NONE, 0, 0, "Test");
+			MenuInflater inflater = getMenuInflater();
+			inflater.inflate(R.menu.menu_parcel_edit, menu);
 			break;
 
-		default:
+		default: // Delegate context menu creation
 			super.onCreateContextMenu(menu, v, menuInfo);
 			break;
 		}
@@ -155,7 +161,43 @@ public class ListParcelActivity extends AbstractBaseActivity {
 	 */
 	@Override
 	public boolean onContextItemSelected(MenuItem item) {
-		// TODO Auto-generated method stub
-		return super.onContextItemSelected(item);
+
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.action_show_parcel: { // Show the parcel
+			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
+					.getMenuInfo();
+			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
+			Intent t = new Intent(this, InfoParcelActivity.class);
+			t.putExtra(InfoParcelActivity.EXTRA_PARCEL_ID, p.getId());
+			startActivity(t);
+		}
+			break;
+
+		case R.id.action_edit_parcel: { // Edit the parcel
+			Toast.makeText(this, "TODO", Toast.LENGTH_SHORT).show();
+			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
+					.getMenuInfo();
+			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
+			Intent t = new Intent(this, InfoParcelActivity.class);
+			t.putExtra(InfoParcelActivity.EXTRA_PARCEL_ID, p.getId());
+			startActivity(t);
+		} // TODO create the edit activity
+			break;
+
+		case R.id.action_delete_parcel: { // Delete the parcel
+			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
+					.getMenuInfo();
+			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
+			getHelper().getParcelDao().delete(p); // TODO catch error
+		}
+			break;
+
+		default: // Delegate item selection handling
+			return super.onContextItemSelected(item);
+		}
+
+		// Item selection handled
+		return true;
 	}
 }
