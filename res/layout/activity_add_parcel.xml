@@ -1,118 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical" >
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="fill_parent"
+    android:layout_gravity="center"
+    android:layout_marginLeft="75dp"
+    android:layout_marginRight="75dp"
+    android:alignmentMode="alignBounds"
+    android:columnCount="2"
+    android:useDefaultMargins="true" >
 
-    <!-- Add parcel activity layout. -->
+    <!-- Add activity layout. -->
 
 
     <!-- Title of the activity. -->
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="75dp"
         android:text="@string/title_add_parcel"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="60sp" />
 
-    <!-- Sub layout for the parcel name. -->
+    <!-- Label for the parcel name. -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    <TextView
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_vertical|clip_horizontal"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_parcel_name" />
 
-        <!-- Label for the parcel name. -->
+    <!-- Parcel name. -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_parcel_name" />
+    <EditText
+        android:id="@+id/tf_parcel_name"
+        android:layout_columnSpan="1"
+        android:layout_gravity="fill_horizontal"
+        android:inputType="text" >
+    </EditText>
 
-        <!-- Parcel name. -->
+    <!-- Label for the parcel growing. -->
 
-        <EditText
-            android:id="@+id/tf_parcel_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="text" >
-        </EditText>
-    </LinearLayout>
+    <TextView
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_vertical|clip_horizontal"
+        android:text="@string/label_parcel_actual_culture" />
 
-    <!-- Sub layout for the parcel growing. -->
+    <!-- Parcel growing. -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    <Spinner
+        android:id="@+id/sp_parcel_actual_culture"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal|fill_horizontal"
+        android:entries="@array/array_cultures_types" />
 
-        <!-- Label for the parcel growing. -->
+    <!-- Label for the previous parcel growing. -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_parcel_actual_culture" />
+    <TextView
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_vertical|clip_horizontal"
+        android:text="@string/label_parcel_previous_culture" />
 
-        <!-- Parcel growing. -->
+    <!-- Parcel previous growing. -->
 
-        <Spinner
-            android:id="@+id/sp_parcel_actual_culture"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/array_cultures_types" />
-    </LinearLayout>
+    <Spinner
+        android:id="@+id/sp_parcel_previous_culture"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal|fill_horizontal"
+        android:entries="@array/array_cultures_types" />
 
-    <!-- Sub layout for the previous parcel growing. -->
+    <!-- Label for the previous parcel surface. -->
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+    <TextView
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_vertical|clip_horizontal"
+        android:text="@string/label_parcel_surface" />
 
-        <!-- Label for the previous parcel growing. -->
+    <!-- Parcel surface. -->
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_parcel_previous_culture" />
-
-        <!-- Parcel previous growing. -->
-
-        <Spinner
-            android:id="@+id/sp_parcel_previous_culture"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/array_cultures_types" />
-    </LinearLayout>
-
-    <!-- Sub layout for the parcel surface. -->
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal" >
-
-        <!-- Label for the previous parcel surface. -->
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_parcel_surface" />
-
-        <!-- Parcel surface. -->
-
-        <NumberPicker
-            android:id="@+id/np_parcel_surface"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </LinearLayout>
+    <NumberPicker
+        android:id="@+id/np_parcel_surface"
+        android:layout_columnSpan="1"
+        android:layout_gravity="center_horizontal|fill_horizontal" />
 
     <!-- Add parcel button. -->
 
     <Button
         android:id="@+id/btn_add_parcel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_columnSpan="2"
+        android:layout_gravity="center_horizontal"
+        android:minWidth="250dp"
         android:text="@string/btn_label_add_parcel" />
 
-</LinearLayout>
+</GridLayout>

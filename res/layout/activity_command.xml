@@ -11,7 +11,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25sp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="45dp"
         android:text="@string/label_command_weight" />
 
     <!-- Sub layout for the command weight. -->
@@ -19,13 +21,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Command weight. -->
 
         <EditText
             android:id="@+id/tf_command_weight"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:inputType="number" >
         </EditText>
@@ -33,7 +36,7 @@
         <!-- Command weight unit. -->
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_command_weight_unit" />
     </LinearLayout>
@@ -42,7 +45,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25sp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="45dp"
         android:text="@string/label_command_surface" />
 
     <!-- Sub layout for the command surface. -->
@@ -50,13 +55,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:gravity="center_horizontal"
+         android:orientation="horizontal"  >
 
         <!-- Command surface. -->
 
         <EditText
             android:id="@+id/tf_command_surface"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:inputType="number" >
         </EditText>
@@ -72,8 +78,8 @@
 
         <Button
             android:id="@+id/btn_command_parcels"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
             android:text="@string/btn_label_command_parcels" />
     </LinearLayout>
 
@@ -81,7 +87,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25sp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="45dp"
         android:text="@string/label_command_packaging" />
 
     <!-- Sub layout for the command packaging. -->
@@ -89,13 +97,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal" >
+        android:gravity="center_horizontal"
+         android:orientation="horizontal"  >
 
         <!-- Command packaging. -->
 
         <EditText
             android:id="@+id/tf_command_packaging"
-            android:layout_width="match_parent"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:inputType="number" >
         </EditText>
@@ -112,7 +121,9 @@
 
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="25sp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="45dp"
         android:text="@string/label_command_order" />
 
     <!-- Sub layout for the command order. -->
@@ -126,8 +137,8 @@
 
         <TextView
             android:id="@+id/tv_command_bags"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"/>
 
         <!-- Command order label. -->
 
@@ -141,8 +152,9 @@
 
     <Button
         android:id="@+id/btn_command_control"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="right"
         android:text="@string/btn_label_command_control" />
 
 </LinearLayout>
