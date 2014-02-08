@@ -16,8 +16,6 @@
  */
 package net.skywodd.yetanotherparcelmanager.models;
 
-import android.net.Uri;
-
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
@@ -54,7 +52,7 @@ public class Parcel {
 
 	/** Parcel image */
 	@DatabaseField(canBeNull = true)
-	private Uri image;
+	private String imageUri;
 
 	/** Parcel GPS latitude */
 	@DatabaseField
@@ -96,14 +94,14 @@ public class Parcel {
 	 *            Parcel address.
 	 */
 	public Parcel(String name, Growing growing, Growing lastGrowing,
-			int surface, Uri image, double latitude, double longitude,
+			int surface, String imageUri, double latitude, double longitude,
 			String address) {
 		this.id = -1;
 		this.name = name;
 		this.growing = growing;
 		this.lastGrowing = lastGrowing;
 		this.surface = surface;
-		this.image = image;
+		this.imageUri = imageUri;
 		this.latitude = latitude;
 		this.longitude = longitude;
 		this.address = address;
@@ -211,8 +209,8 @@ public class Parcel {
 	 * 
 	 * @return The parcel image URI.
 	 */
-	public Uri getImage() {
-		return image;
+	public String getImage() {
+		return imageUri;
 	}
 
 	/**
@@ -221,8 +219,8 @@ public class Parcel {
 	 * @param image
 	 *            The new parcel image URI.
 	 */
-	public void setImage(Uri image) {
-		this.image = image;
+	public void setImage(String imageUri) {
+		this.imageUri = imageUri;
 	}
 
 	/**
@@ -301,7 +299,7 @@ public class Parcel {
 		builder.append(", surface=");
 		builder.append(surface);
 		builder.append(", image=");
-		builder.append(image);
+		builder.append(imageUri);
 		builder.append(", latitude=");
 		builder.append(latitude);
 		builder.append(", longitude=");
