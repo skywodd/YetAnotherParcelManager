@@ -29,6 +29,9 @@ import net.skywodd.yetanotherparcelmanager.R;
  */
 public class InfoParcelActivity extends AbstractBaseActivity {
 
+	/** Extra key for the parcel ID */
+	public static final String EXTRA_PARCEL_ID = "net.skywodd.yetanotherparcelmanager.activities.InfoParcelActivity.EXTRA_PARCEL_ID";
+	
 	/*
 	 * (non-Javadoc)
 	 * @see net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity#onCreate(android.os.Bundle)
