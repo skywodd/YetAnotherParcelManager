@@ -22,10 +22,13 @@ import net.skywodd.yetanotherparcelmanager.models.Growing;
 import net.skywodd.yetanotherparcelmanager.models.Parcel;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 /**
@@ -36,6 +39,9 @@ import android.widget.ListView;
  * @version 1.0.0
  */
 public class ListParcelActivity extends AbstractBaseActivity {
+
+	/** Listview for the parcel list */
+	private ListView parcelsList;
 
 	/*
 	 * (non-Javadoc)
@@ -71,9 +77,12 @@ public class ListParcelActivity extends AbstractBaseActivity {
 				R.layout.listview_header_row, null);
 
 		// Add the lit header and bind the adapter.
-		ListView lv = (ListView) findViewById(R.id.list_parcel);
-		lv.addHeaderView(header);
-		lv.setAdapter(adapter);
+		parcelsList = (ListView) findViewById(R.id.list_parcel);
+		parcelsList.addHeaderView(header);
+		parcelsList.setAdapter(adapter);
+
+		// Register for context menu creation
+		registerForContextMenu(parcelsList);
 	}
 
 	/*
@@ -89,7 +98,7 @@ public class ListParcelActivity extends AbstractBaseActivity {
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.menu_add, menu);
 		// Remove itself from the default menu
-		menu.removeItem(R.id.action_parcel); 
+		menu.removeItem(R.id.action_parcel);
 
 		// Menu created
 		return true;
@@ -112,5 +121,41 @@ public class ListParcelActivity extends AbstractBaseActivity {
 		default: // Call super for action handling
 			return super.onOptionsItemSelected(item);
 		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreateContextMenu(android.view.ContextMenu,
+	 * android.view.View, android.view.ContextMenu.ContextMenuInfo)
+	 */
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+
+		// Handle context menu creation
+		switch (v.getId()) {
+		case R.id.list_parcel:
+			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) menuInfo;
+			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
+			menu.setHeaderTitle(p.getName());
+			menu.add(Menu.NONE, 0, 0, "Test");
+			break;
+
+		default:
+			super.onCreateContextMenu(menu, v, menuInfo);
+			break;
+		}
+	}
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onContextItemSelected(android.view.MenuItem)
+	 */
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		// TODO Auto-generated method stub
+		return super.onContextItemSelected(item);
 	}
 }
