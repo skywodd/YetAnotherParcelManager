@@ -53,7 +53,7 @@ public class Parcel {
 	private int surface;
 
 	/** Parcel image */
-	@DatabaseField
+	@DatabaseField(canBeNull = true)
 	private Uri image;
 
 	/** Parcel GPS latitude */
