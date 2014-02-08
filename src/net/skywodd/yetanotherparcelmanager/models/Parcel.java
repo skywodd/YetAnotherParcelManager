@@ -16,8 +16,6 @@
  */
 package net.skywodd.yetanotherparcelmanager.models;
 
-import java.net.URI;
-
 import android.net.Uri;
 
 import com.j256.ormlite.field.DatabaseField;
@@ -100,6 +98,7 @@ public class Parcel {
 	public Parcel(String name, Growing growing, Growing lastGrowing,
 			int surface, Uri image, double latitude, double longitude,
 			String address) {
+		this.id = -1;
 		this.name = name;
 		this.growing = growing;
 		this.lastGrowing = lastGrowing;
