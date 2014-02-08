@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
 
-    <!-- Cultures types array. -->
+    <!-- Cultures types array. MUST BE IN SYNC WITH THE "GROWING" ENUM! -->
 
     <string-array name="array_cultures_types">
         <item>Autre</item>
