@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical" >
 
     <!-- Converter activity layout. -->
@@ -17,8 +18,9 @@
     <!-- Sub layout for the converter density. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Converter density. -->
@@ -48,8 +50,9 @@
     <!-- Sub layout for the converter PMG. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- PMG. -->
@@ -79,8 +82,9 @@
     <!-- Sub layout for the converter weight. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Converter weight. -->
@@ -101,8 +105,9 @@
     <!-- Sub layout for the buttons. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Button to choice the parcel. -->
