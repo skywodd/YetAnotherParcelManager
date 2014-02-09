@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center_horizontal"
     android:orientation="vertical" >
 
     <!-- Control activity layout. -->
@@ -17,8 +18,9 @@
     <!-- Sub layout for the control density. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Control density. -->
@@ -48,8 +50,9 @@
     <!-- Sub layout for the control gap. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Control gap. -->
@@ -79,8 +82,9 @@
     <!-- Sub layout for the control ranks. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Control ranks. -->
@@ -108,8 +112,9 @@
     <!-- Sub layout for the control grains. -->
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
 
         <!-- Control grains. -->
