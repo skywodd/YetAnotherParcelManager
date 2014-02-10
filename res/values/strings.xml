@@ -23,6 +23,7 @@
     <string name="btn_label_command_parcels">Parcelles</string>
     <string name="btn_list_info">Image affichage infos parcelle</string>
     <string name="btn_take_picture">Prendre une Photo</string>
+   <string name="btn_get_pos">Coordonnées actuels</string>
 
     <!-- Titles -->
     <string name="title_activity_add">Ajout parcelle</string>
@@ -40,6 +41,9 @@
     <string name="label_parcel_actual_culture">Culture :</string>
     <string name="label_parcel_previous_culture">Culture précédente :</string>
     <string name="label_parcel_surface">Surface :</string>
+    <string name="label_parcel_address">Adresse :</string>
+    <string name="label_parcel_latitude">Latitude :</string>
+    <string name="label_parcel_longitude">Longitude :</string>
     <string name="label_converter_density">Densité de semis :</string>
     <string name="label_converter_density_unit">grains/m²</string>
     <string name="label_converter_pmg">PMG :</string>
