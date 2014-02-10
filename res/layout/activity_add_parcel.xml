@@ -1,97 +1,176 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- Add activity layout. -->
-
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_gravity="center|fill_vertical"
-    android:columnCount="2" >
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin" >
 
-    <!-- Label for the parcel name. -->
-
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="@string/label_parcel_name" />
+        android:orientation="vertical" >
 
-    <!-- Parcel name. TODO Correct the line extension for too long strings (maxlength do weird things...)-->
+        <!-- Add activity layout. -->
 
-    <EditText
-        android:id="@+id/tf_parcel_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_horizontal"
-        android:inputType="text" >
-    </EditText>
+        <GridLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:columnCount="2" >
 
-    <!-- Label for the parcel growing. -->
+            <!-- Label for the parcel name. -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="@string/label_parcel_actual_culture" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_name" />
 
-    <!-- Parcel growing. -->
+            <!-- Parcel name. -->
 
-    <Spinner
-        android:id="@+id/sp_parcel_actual_culture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:entries="@array/array_cultures_types" />
+            <EditText
+                android:id="@+id/tf_parcel_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:inputType="textShortMessage" >
+            </EditText>
 
-    <!-- Label for the previous parcel growing. -->
+            <!-- Label for the parcel growing. -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="@string/label_parcel_previous_culture" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_actual_culture" />
 
-    <!-- Parcel previous growing. -->
+            <!-- Parcel growing. -->
 
-    <Spinner
-        android:id="@+id/sp_parcel_previous_culture"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:entries="@array/array_cultures_types" />
+            <Spinner
+                android:id="@+id/sp_parcel_actual_culture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:entries="@array/array_cultures_types" />
 
-    <!-- Label for the previous parcel surface. -->
+            <!-- Label for the previous parcel growing. -->
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
-        android:text="@string/label_parcel_surface" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_previous_culture" />
 
-    <!-- Parcel surface. -->
+            <!-- Parcel previous growing. -->
 
-    <NumberPicker
-        android:id="@+id/np_parcel_surface"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal" />
+            <Spinner
+                android:id="@+id/sp_parcel_previous_culture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:entries="@array/array_cultures_types" />
 
-    <!-- Add parcel button. -->
+            <!-- Label for the previous parcel surface. -->
 
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_columnSpan="2"
-        android:layout_gravity="center_horizontal"
-        android:drawableLeft="@drawable/ic_action_camera"
-        android:text="@string/btn_take_picture" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_surface" />
 
-    <Button
-        android:id="@+id/btn_add_parcel"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:layout_columnSpan="2"
-        android:layout_gravity="center_horizontal"
-        android:text="@string/btn_label_add_parcel" />
+            <!-- Parcel surface. -->
 
-</GridLayout>
+            <NumberPicker
+                android:id="@+id/np_parcel_surface"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal" />
+
+            <!-- Label for the postal address. -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_address" />
+
+            <!-- Parcel address. -->
+
+            <EditText
+                android:id="@+id/tf_parcel_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:inputType="textShortMessage" >
+            </EditText>
+
+            <!-- Label for the latitude. -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_latitude" />
+
+            <!-- Parcel latitude. -->
+
+            <EditText
+                android:id="@+id/tf_parcel_latitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:inputType="textShortMessage" >
+            </EditText>
+
+            <!-- Label for the longitude. -->
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="@string/label_parcel_longitude" />
+
+            <!-- Parcel longitude. -->
+
+            <EditText
+                android:id="@+id/tf_parcel_longitude"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="fill_horizontal"
+                android:inputType="textShortMessage" >
+            </EditText>
+        </GridLayout>
+
+        <!-- GPS button. -->
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="@string/btn_get_pos" />
+
+        <!-- Take picture button. -->
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:drawableLeft="@drawable/ic_action_camera"
+            android:text="@string/btn_take_picture" />
+
+        <!-- Add parcel button. -->
+
+        <Button
+            android:id="@+id/btn_add_parcel"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center_horizontal"
+            android:layout_weight="1"
+            android:text="@string/btn_label_add_parcel" />
+    </LinearLayout>
+
+</ScrollView>
