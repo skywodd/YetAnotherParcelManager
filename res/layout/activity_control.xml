@@ -2,7 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
     android:orientation="vertical" >
 
     <!-- Control activity layout. -->
@@ -18,7 +21,7 @@
     <!-- Sub layout for the control density. -->
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
@@ -27,15 +30,16 @@
 
         <EditText
             android:id="@+id/tf_control_density"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:inputType="number" >
         </EditText>
 
         <!-- Control density unit. -->
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_control_density_unit" />
     </LinearLayout>
@@ -50,7 +54,7 @@
     <!-- Sub layout for the control gap. -->
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
@@ -59,15 +63,16 @@
 
         <EditText
             android:id="@+id/tf_control_gap"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:inputType="number" >
         </EditText>
 
         <!-- Control gap unit. -->
 
         <TextView
-            android:layout_width="match_parent"
+           android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_control_gap_unit" />
     </LinearLayout>
@@ -82,7 +87,7 @@
     <!-- Sub layout for the control ranks. -->
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
@@ -91,13 +96,14 @@
 
         <TextView
             android:id="@+id/tv_control_rank"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <!-- Control ranks unit. -->
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_control_ranks_unit" />
     </LinearLayout>
@@ -112,7 +118,7 @@
     <!-- Sub layout for the control grains. -->
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal" >
@@ -121,13 +127,14 @@
 
         <TextView
             android:id="@+id/tv_control_grains"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
         <!-- Control grains unit. -->
 
         <TextView
-            android:layout_width="match_parent"
+           android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_control_grains_unit" />
     </LinearLayout>
