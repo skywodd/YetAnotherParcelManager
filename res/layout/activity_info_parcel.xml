@@ -2,6 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
     android:gravity="center"
     android:orientation="vertical" >
 
@@ -14,6 +18,7 @@
         android:id="@+id/tv_info_parcel_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="2"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <!-- Image of the parcel. -->
@@ -22,6 +27,7 @@
         android:id="@+id/img_parcel_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_weight="1"
         android:layout_gravity="center_horizontal"
         android:contentDescription="@string/label_parcel_image"
         android:src="@drawable/ic_launcher" />
@@ -30,60 +36,88 @@
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_gravity="center"
+        android:layout_weight="1"
         android:columnCount="2" >
 
-      
+        <!-- Label for the actual parcel culture. -->
 
-            <!-- Label for the actual parcel culture. -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_parcel_actual_culture" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_parcel_actual_culture" />
+        <!-- Actual parcel culture. -->
 
-            <!-- Actual parcel culture. -->
+        <TextView
+            android:id="@+id/tv_info_culture_actual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
 
-            <TextView
-                android:id="@+id/tv_info_culture_actual"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
+        <!-- Label for the previous parcel culture. -->
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_parcel_previous_culture" />
 
-            <!-- Label for the previous parcel culture. -->
+        <!-- Previous parcel culture. -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_parcel_previous_culture" />
-
-            <!-- Previous parcel culture. -->
-
-            <TextView
-                android:id="@+id/tv_info_culture_last"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
+        <TextView
+            android:id="@+id/tv_info_culture_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
 
         <!-- Row layout -->
 
 
-            <!-- Label for the parcel surface. -->
+        <!-- Label for the parcel surface. -->
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/label_parcel_surface" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_parcel_surface" />
 
-            <!-- Parcel surface. -->
+        <!-- Parcel surface. -->
 
-            <TextView
-                android:id="@+id/tv_info_parcel_surface"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="" />
+        <TextView
+            android:id="@+id/tv_info_parcel_surface"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+        
+          <!--Label for Parcel Latitude. -->
+          
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_parcel_latitude" />
+
+        <!-- Parcel latitude. -->
+
+        <TextView
+            android:id="@+id/tv_info_parcel_latitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
+        
+         <!--Label for Parcel longitude. -->
+          
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_parcel_longitude" />
+
+        <!-- Parcel longitude. -->
+
+        <TextView
+            android:id="@+id/tv_info_parcel_longitude"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="" />
     </GridLayout>
 
 </LinearLayout>
