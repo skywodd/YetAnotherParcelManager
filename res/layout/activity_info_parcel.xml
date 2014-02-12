@@ -6,7 +6,7 @@
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginTop="@dimen/activity_vertical_margin"
-    android:gravity="center"
+    android:gravity="center_horizontal"
     android:orientation="vertical" >
 
     <!-- Details parcel layout. Display all informations about a parcel. -->
@@ -16,10 +16,9 @@
 
     <TextView
         android:id="@+id/tv_info_parcel_name"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:text="" />
 
     <!-- Image of the parcel. -->
 
@@ -27,18 +26,15 @@
         android:id="@+id/img_parcel_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:layout_gravity="center_horizontal"
         android:contentDescription="@string/label_parcel_image"
-        android:src="@drawable/ic_launcher" />
+        android:src="@drawable/img_parcel_default" />
 
     <!-- Sub layout for all parcel's informations. NOTE: move to grid layout. -->
 
     <GridLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_weight="1"
         android:columnCount="2" >
 
         <!-- Label for the actual parcel culture. -->
@@ -46,6 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="@string/label_parcel_actual_culture" />
 
         <!-- Actual parcel culture. -->
@@ -54,6 +51,7 @@
             android:id="@+id/tv_info_culture_actual"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="" />
 
         <!-- Label for the previous parcel culture. -->
@@ -61,6 +59,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="@string/label_parcel_previous_culture" />
 
         <!-- Previous parcel culture. -->
@@ -69,6 +68,7 @@
             android:id="@+id/tv_info_culture_last"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="" />
 
         <!-- Row layout -->
@@ -79,6 +79,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="@string/label_parcel_surface" />
 
         <!-- Parcel surface. -->
@@ -87,13 +88,15 @@
             android:id="@+id/tv_info_parcel_surface"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="" />
-        
-          <!--Label for Parcel Latitude. -->
-          
+
+        <!-- Label for Parcel Latitude. -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="@string/label_parcel_latitude" />
 
         <!-- Parcel latitude. -->
@@ -102,13 +105,15 @@
             android:id="@+id/tv_info_parcel_latitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="" />
-        
-         <!--Label for Parcel longitude. -->
-          
+
+        <!-- Label for Parcel longitude. -->
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="@string/label_parcel_longitude" />
 
         <!-- Parcel longitude. -->
@@ -117,6 +122,7 @@
             android:id="@+id/tv_info_parcel_longitude"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_elements_margin"
             android:text="" />
     </GridLayout>
 

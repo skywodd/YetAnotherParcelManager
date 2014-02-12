@@ -146,6 +146,7 @@
         <!-- GPS button. -->
 
         <Button
+            android:id="@+id/btn_gps_parcel"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center_horizontal"
@@ -155,6 +156,7 @@
         <!-- Take picture button. -->
 
         <Button
+            android:id="@+id/btn_picture_parcel"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center_horizontal"

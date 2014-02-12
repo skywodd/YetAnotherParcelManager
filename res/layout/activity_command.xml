@@ -24,6 +24,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:orientation="horizontal" >
 
         <!-- Command weight. -->
@@ -50,6 +51,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:text="@string/label_command_surface" />
 
     <!-- Sub layout for the command surface. -->
@@ -57,6 +59,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:orientation="horizontal" >
 
         <!-- Command surface. -->
@@ -92,6 +95,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:text="@string/label_command_packaging" />
 
     <!-- Sub layout for the command packaging. -->
@@ -100,6 +104,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:orientation="horizontal" >
 
         <!-- Command packaging. -->
@@ -126,6 +131,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:text="@string/label_command_order" />
 
     <!-- Sub layout for the command order. -->
@@ -134,6 +140,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:orientation="horizontal" >
 
         <!-- Command order count. -->
@@ -159,6 +166,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+       	android:layout_marginTop="@dimen/activity_elements_margin"
         android:text="@string/btn_label_command_control" />
 
 </LinearLayout>
