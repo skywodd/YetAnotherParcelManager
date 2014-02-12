@@ -41,5 +41,6 @@ public class InfoParcelActivity extends AbstractBaseActivity {
 		
 		setContentView(R.layout.activity_info_parcel);
 		
+		
 	}
 }

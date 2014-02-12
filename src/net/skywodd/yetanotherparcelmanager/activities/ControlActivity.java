@@ -18,6 +18,7 @@
 package net.skywodd.yetanotherparcelmanager.activities;
 
 import android.os.Bundle;
+import android.view.Menu;
 import net.skywodd.yetanotherparcelmanager.R;
 
 /**
@@ -39,5 +40,22 @@ public class ControlActivity extends AbstractBaseActivity {
 		
 		setContentView(R.layout.activity_control);
 		
+	}
+	
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see android.app.Activity#onCreateOptionsMenu(android.view.Menu)
+	 */
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		super.onCreateOptionsMenu(menu);
+
+		
+		// Remove itself from the default menu
+		menu.removeItem(R.id.action_control);
+
+		// Menu created
+		return true;
 	}
 }
