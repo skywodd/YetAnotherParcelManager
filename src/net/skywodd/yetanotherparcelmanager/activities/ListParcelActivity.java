@@ -16,9 +16,10 @@
  */
 package net.skywodd.yetanotherparcelmanager.activities;
 
+import java.util.ArrayList;
+
 import net.skywodd.yetanotherparcelmanager.R;
 import net.skywodd.yetanotherparcelmanager.helpers.ParcelAdapter;
-import net.skywodd.yetanotherparcelmanager.models.Growing;
 import net.skywodd.yetanotherparcelmanager.models.Parcel;
 import android.content.Intent;
 import android.os.Bundle;
@@ -45,6 +46,8 @@ public class ListParcelActivity extends AbstractBaseActivity {
 	/** Listview for the parcel list */
 	private ListView parcelsList;
 
+	private ParcelAdapter adapter;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -56,38 +59,78 @@ public class ListParcelActivity extends AbstractBaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_parcel);
+		ArrayList<Parcel> parcelData = chargeParcelsFromDatabase();
+		loadList("onCreate", parcelData);
+	}
 
+	/* (non-Javadoc)
+	 * @see android.app.Activity#onResume()
+	 */
+	@Override
+	protected void onResume() {
+		super.onResume();
+		// Create the list view adapter
+		// for Parcel data.
+		ArrayList<Parcel> parcelData = chargeParcelsFromDatabase();
+		loadList("onResume", parcelData);
+
+	};
+
+	/**
+	 * The function to load the Parcel list on ListView.
+	 * 
+	 * @param function The calling Fucntion to avoid multiple headers
+	 * @param parcelData The list of parcel to display
+	 */
+	public void loadList(String function, ArrayList<Parcel> parcelData) {
+		if (parcelData != null) {
+			adapter = new ParcelAdapter(this, R.layout.listview_item_row,
+					parcelData);
+
+			if (function.equals("onCreate")) {
+				// Create the list header.
+				View header = (View) getLayoutInflater().inflate(
+						R.layout.listview_header_row, null);
+
+				// Add the lit header and bind the adapter.
+				parcelsList = (ListView) findViewById(R.id.list_parcel);
+				parcelsList.addHeaderView(header);
+				parcelsList.setAdapter(adapter);
+
+				// Register for context menu creation
+				registerForContextMenu(parcelsList);
+			} else {
+				parcelsList = (ListView) findViewById(R.id.list_parcel);
+				parcelsList.setAdapter(adapter);
+			}
+		} else {
+			Toast.makeText(this, "Database is empty", Toast.LENGTH_LONG).show();
+		}
+
+	}
+
+	/**
+	 * A function to get The parcel List from Database
+	 * @return The list of parcel from the database
+	 */
+	public ArrayList<Parcel> chargeParcelsFromDatabase() {
 		// Query all known parcel data
-		// TODO remove and replace with ORM query
-		Parcel parcelData[] = new Parcel[] {
-				new Parcel("Test1", Growing.BARLEY, Growing.COLZA, 5, null, 0d,
-						0d, "test1"),
-				new Parcel("Test2", Growing.CORN, Growing.COLZA, 5, null, 0d,
-						0d, "test2"),
-				new Parcel("Test3", Growing.MEADOW, Growing.COLZA, 5, null, 0d,
-						0d, "test3"),
-				new Parcel("Test4", Growing.SUNFLOWER, Growing.COLZA, 5, null,
-						0d, 0d, "test4"),
-				new Parcel("Test5", Growing.WHEAT, Growing.COLZA, 5, null, 0d,
-						0d, "test5") };
-		// parcelData = (Parcel[])
-		// getHelper().getParcelDao().queryForAll().toArray();
 
-		// Create the list view adapter for Parcel data.
-		ParcelAdapter adapter = new ParcelAdapter(this,
-				R.layout.listview_item_row, parcelData);
+		Object buf[] = getHelper().getParcelDao().queryForAll().toArray();
+		if (buf.length > 0) {
+			ArrayList<Parcel> parcelData = new ArrayList<Parcel>();
+			for (int i = 0; i < buf.length; ++i)
+				parcelData.add((Parcel) buf[i]);
+			if (parcelData.size() > 0) {
 
-		// Create the list header.
-		View header = (View) getLayoutInflater().inflate(
-				R.layout.listview_header_row, null);
+				return parcelData;
+			}
+			return null;
+		} else {
 
-		// Add the lit header and bind the adapter.
-		parcelsList = (ListView) findViewById(R.id.list_parcel);
-		parcelsList.addHeaderView(header);
-		parcelsList.setAdapter(adapter);
+			return null;
+		}
 
-		// Register for context menu creation
-		registerForContextMenu(parcelsList);
 	}
 
 	/*
@@ -120,7 +163,10 @@ public class ListParcelActivity extends AbstractBaseActivity {
 		// Handle item selection
 		switch (item.getItemId()) {
 		case R.id.action_add_parcel: // Add parcel action
-			startActivity(new Intent(this, AddParcelActivity.class));
+			Intent t = new Intent(this, AddParcelActivity.class);
+			t.putExtra(AddParcelActivity.EXTRA_PARCEL_ID, 0);
+			t.putExtra(AddParcelActivity.EXTRA_PARCEL_ADD, true);
+			startActivity(t);
 			return true;
 
 		default: // Call super for action handling
@@ -174,22 +220,25 @@ public class ListParcelActivity extends AbstractBaseActivity {
 		}
 			break;
 
-		case R.id.action_edit_parcel: { // Edit the parcel
-			Toast.makeText(this, "TODO", Toast.LENGTH_SHORT).show();
+		case R.id.action_edit_parcel: { 
 			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
 					.getMenuInfo();
+		
 			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
-			Intent t = new Intent(this, InfoParcelActivity.class);
-			t.putExtra(InfoParcelActivity.EXTRA_PARCEL_ID, p.getId());
+			Intent t = new Intent(this, AddParcelActivity.class);
+			t.putExtra(AddParcelActivity.EXTRA_PARCEL_ID, p.getId());
+			t.putExtra(AddParcelActivity.EXTRA_PARCEL_ADD, false);
 			startActivity(t);
-		} // TODO create the edit activity
+		} 
 			break;
 
 		case R.id.action_delete_parcel: { // Delete the parcel
 			AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item
 					.getMenuInfo();
 			Parcel p = (Parcel) parcelsList.getItemAtPosition(info.position);
-			getHelper().getParcelDao().delete(p); // TODO catch error
+			getHelper().getParcelDao().delete(p);
+			adapter.remove(adapter.getItem(info.position-1));
+			adapter.notifyDataSetChanged();
 		}
 			break;
 

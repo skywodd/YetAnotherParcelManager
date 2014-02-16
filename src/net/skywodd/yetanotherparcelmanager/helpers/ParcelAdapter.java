@@ -16,13 +16,17 @@
  */
 package net.skywodd.yetanotherparcelmanager.helpers;
 
+import java.util.ArrayList;
+
 import net.skywodd.yetanotherparcelmanager.R;
 import net.skywodd.yetanotherparcelmanager.activities.InfoParcelActivity;
 import net.skywodd.yetanotherparcelmanager.models.Parcel;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.BitmapFactory.Options;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +49,7 @@ public class ParcelAdapter extends ArrayAdapter<Parcel> {
 	private int layoutResourceId;
 
 	/** Array of display-able parcel. */
-	private Parcel data[] = null;
+	private ArrayList<Parcel> data;
 
 	/**
 	 * Create a new array adapter for Parcel list display.
@@ -57,7 +61,8 @@ public class ParcelAdapter extends ArrayAdapter<Parcel> {
 	 * @param data
 	 *            Array of parcel to be displayed.
 	 */
-	public ParcelAdapter(Context context, int layoutResourceId, Parcel[] data) {
+	public ParcelAdapter(Context context, int layoutResourceId,
+			ArrayList<Parcel> data) {
 		super(context, layoutResourceId, data);
 		this.layoutResourceId = layoutResourceId;
 		this.context = context;
@@ -128,18 +133,21 @@ public class ParcelAdapter extends ArrayAdapter<Parcel> {
 		}
 
 		// Populate the container fields
-		Parcel p = data[position];
+		Parcel p = data.get(position);
 		holder.targetID = p.getId();
 		holder.txtName.setText(p.getName());
 		holder.txtCulture.setText(context.getResources().getStringArray(
 				R.array.array_cultures_types)[p.getGrowing().ordinal()]);
-		if (p.getImage() != null)
-			holder.imgParcel.setImageURI(new Uri.Builder().path(p.getImage()).build());
-		else
+		if (p.getImage() != null) {
+			Options op = new Options();
+			op.inSampleSize = 40;// You want to scale from 4000 to 100
+			Bitmap thumbnail = BitmapFactory.decodeFile(p.getImage(), op);
+			holder.imgParcel.setImageBitmap(thumbnail);
+		} else {
 			// Default image
 			holder.imgParcel.setImageDrawable(context.getResources()
 					.getDrawable(R.drawable.ic_action_picture));
-
+		}
 		// Return the builded view
 		return convertView;
 	}
