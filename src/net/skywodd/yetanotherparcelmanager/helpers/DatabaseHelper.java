@@ -19,7 +19,6 @@ package net.skywodd.yetanotherparcelmanager.helpers;
 import java.sql.SQLException;
 
 import net.skywodd.yetanotherparcelmanager.R;
-import net.skywodd.yetanotherparcelmanager.models.Growing;
 import net.skywodd.yetanotherparcelmanager.models.Parcel;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
@@ -74,7 +73,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 		} catch (SQLException e) {
 			throw new IllegalStateException("Cannot create the database", e);
 		}
-	
+
 	}
 
 	/*
@@ -104,7 +103,7 @@ public class DatabaseHelper extends OrmLiteSqliteOpenHelper {
 	public Dao<Parcel, Integer> getDao() throws SQLException {
 		if (parcelDao == null)
 			parcelDao = getDao(Parcel.class);
-		
+
 		return parcelDao;
 	}
 
