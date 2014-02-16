@@ -4,13 +4,14 @@
     <!-- Application strings -->
     <string name="app_name">Gestionnaire de parcelles</string>
     <string name="action_settings">Paramétres</string>
+    <string name="images_folder">ParcelsImages</string>
 
     <!-- Action bar -->
     <string name="action_parcel">Parcelles</string>
     <string name="action_converter">Convertisseur</string>
     <string name="action_command">Commande</string>
     <string name="action_control">Contrôle</string>
-    <string name="action_add_parcel">Ajout Parcelle</string>
+    <string name="action_add_parcel">Parcelle</string>
     <string name="action_show">Afficher</string>
     <string name="action_edit">Modifier</string>
     <string name="action_delete">Supprimer</string>
@@ -23,7 +24,9 @@
     <string name="btn_label_command_parcels">Parcelles</string>
     <string name="btn_list_info">Image affichage infos parcelle</string>
     <string name="btn_take_picture">Prendre une Photo</string>
-   <string name="btn_get_pos">Coordonnées actuels</string>
+    <string name="btn_get_pos">Coordonnées actuels</string>
+    <string name="btn_show_pos">Carte</string>
+    <string name="btn_label_update_parcel">Modifier</string>
 
     <!-- Titles -->
     <string name="title_activity_add">Ajout parcelle</string>
@@ -33,6 +36,7 @@
     <string name="title_activity_info">Parcelle</string>
     <string name="title_header_parcel">Parcelles</string>
     <string name="title_add_parcel">Ajouter Parcelle</string>
+    <string name="title_activity_localisation">Localisation</string>
     <string name="img_list_parcel">Image de la parcelle</string>
 
     <!-- Labels -->
@@ -44,6 +48,7 @@
     <string name="label_parcel_address">Adresse :</string>
     <string name="label_parcel_latitude">Latitude :</string>
     <string name="label_parcel_longitude">Longitude :</string>
+    <string name="label_parcel_address">Adresse :</string>
     <string name="label_converter_density">Densité de semis :</string>
     <string name="label_converter_density_unit">grains/m²</string>
     <string name="label_converter_pmg">PMG :</string>
