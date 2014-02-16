@@ -1,82 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="@dimen/activity_vertical_margin"
     android:layout_marginLeft="@dimen/activity_horizontal_margin"
     android:layout_marginRight="@dimen/activity_horizontal_margin"
     android:layout_marginTop="@dimen/activity_vertical_margin" >
 
+    <!-- Add activity layout. -->
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical" >
 
-        <!-- Add activity layout. -->
+        <!-- Line Name -->
 
-        <GridLayout
+        <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="2"
-            android:columnCount="2" >
+            android:orientation="horizontal" >
 
             <!-- Label for the parcel name. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:text="@string/label_parcel_name" />
 
             <!-- Parcel name. -->
 
             <EditText
                 android:id="@+id/tf_parcel_name"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill_horizontal"
-                android:inputType="textShortMessage" >
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2"
+                android:inputType="textCapSentences" >
             </EditText>
+        </LinearLayout>
+
+        <!-- Line Growing -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Label for the parcel growing. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:text="@string/label_parcel_actual_culture" />
 
             <!-- Parcel growing. -->
 
             <Spinner
                 android:id="@+id/sp_parcel_actual_culture"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2"
                 android:entries="@array/array_cultures_types" />
+        </LinearLayout>
+
+        <!-- Line Previous Growing -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Label for the previous parcel growing. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:text="@string/label_parcel_previous_culture" />
 
             <!-- Parcel previous growing. -->
 
             <Spinner
                 android:id="@+id/sp_parcel_previous_culture"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2"
                 android:entries="@array/array_cultures_types" />
+        </LinearLayout>
+
+        <!-- Line Surface -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Label for the previous parcel surface. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:layout_gravity="center_vertical"
                 android:text="@string/label_parcel_surface" />
 
@@ -84,64 +113,92 @@
 
             <NumberPicker
                 android:id="@+id/np_parcel_surface"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2" />
+        </LinearLayout>
+
+        <!-- Line Postal Address -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Label for the postal address. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:text="@string/label_parcel_address" />
 
             <!-- Parcel address. -->
 
             <EditText
                 android:id="@+id/tf_parcel_address"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill_horizontal"
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2"
                 android:inputType="textShortMessage" >
             </EditText>
+        </LinearLayout>
+
+        <!-- Line Latitude -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Label for the latitude. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:text="@string/label_parcel_latitude" />
 
             <!-- Parcel latitude. -->
 
             <EditText
                 android:id="@+id/tf_parcel_latitude"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill_horizontal"
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2"
                 android:inputType="textShortMessage" >
             </EditText>
+        </LinearLayout>
+
+        <!-- Line Longitude -->
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal" >
 
             <!-- Label for the longitude. -->
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
                 android:text="@string/label_parcel_longitude" />
 
             <!-- Parcel longitude. -->
 
             <EditText
                 android:id="@+id/tf_parcel_longitude"
-                android:layout_width="wrap_content"
+               android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="fill_horizontal"
+                android:layout_gravity="center|fill_horizontal"
+                android:layout_weight="2"
                 android:inputType="textShortMessage" >
             </EditText>
-        </GridLayout>
+        </LinearLayout>
 
         <!-- GPS button. -->
 
