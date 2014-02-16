@@ -17,9 +17,13 @@
 
 package net.skywodd.yetanotherparcelmanager.activities;
 
-import android.os.Bundle;
-import android.view.Menu;
 import net.skywodd.yetanotherparcelmanager.R;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * This class manage ControlMenuActivity.
@@ -29,19 +33,70 @@ import net.skywodd.yetanotherparcelmanager.R;
  */
 public class ControlActivity extends AbstractBaseActivity {
 
-	
+	/** Extra key for the parcel density */
+	public static final String EXTRA_PARCEL_DEN = "net.skywodd.yetanotherparcelmanager.activities.InfoParcelActivity.EXTRA_PARCEL_DEN";
+
+	private EditText density, spread;
+	private TextView rankNumber, grainsNumber;
+
 	/*
 	 * (non-Javadoc)
-	 * @see net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity#onCreate(android.os.Bundle)
+	 * 
+	 * @see
+	 * net.skywodd.yetanotherparcelmanager.activities.AbstractBaseActivity#onCreate
+	 * (android.os.Bundle)
 	 */
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		setContentView(R.layout.activity_control);
-		
+
+		density = (EditText) findViewById(R.id.tf_control_density);
+		spread = (EditText) findViewById(R.id.tf_control_gap);
+
+		rankNumber = (TextView) findViewById(R.id.tv_control_rank);
+		grainsNumber = (TextView) findViewById(R.id.tv_control_grains);
+
+		if (getIntent().getExtras().getInt(EXTRA_PARCEL_DEN) != 0) {
+			density.setText(Integer.toString(getIntent().getExtras().getInt(
+					EXTRA_PARCEL_DEN)));
+		}
+
+		TextWatcher watcher = new TextWatcher() {
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				Double densityVal, spreadVal, rankVal;
+				if (!spread.getText().toString().equals("")
+						&& !density.getText().toString().equals("")) {
+					densityVal = Double.parseDouble(density.getText()
+							.toString());
+					spreadVal = Double.parseDouble(spread.getText().toString());
+					rankVal = densityVal / spreadVal;
+					rankNumber.setText(Integer.toString((int) Math
+							.floor(rankVal + 0.5d)));
+					grainsNumber.setText(Integer.toString((int) Math
+							.floor((densityVal / rankVal) + 0.5d)));
+				}
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+			}
+		};
+
+		density.addTextChangedListener(watcher);
+		spread.addTextChangedListener(watcher);
+
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -51,7 +106,6 @@ public class ControlActivity extends AbstractBaseActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 
-		
 		// Remove itself from the default menu
 		menu.removeItem(R.id.action_control);
 

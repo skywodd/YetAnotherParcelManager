@@ -17,10 +17,18 @@
 
 package net.skywodd.yetanotherparcelmanager.activities;
 
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuInflater;
 import net.skywodd.yetanotherparcelmanager.R;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
 /**
  * This class manage converterMenuActivity.
@@ -29,8 +37,14 @@ import net.skywodd.yetanotherparcelmanager.R;
  * @version 1.0.0
  */
 public class ConverterActivity extends AbstractBaseActivity {
-	
-	
+
+	private EditText density, pmg;
+	private TextView weight;
+
+	private Button com;
+
+	private Context mContext;
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -44,8 +58,63 @@ public class ConverterActivity extends AbstractBaseActivity {
 
 		setContentView(R.layout.activity_converter);
 
+		density = (EditText) findViewById(R.id.tf_converter_density);
+		pmg = (EditText) findViewById(R.id.tf_converter_pmg);
+
+		weight = (TextView) findViewById(R.id.tv_converter_weight);
+
+		mContext = this.getApplicationContext();
+
+		com = (Button) findViewById(R.id.btn_converter_command);
+		com.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				Intent t = new Intent(mContext, CommandActivity.class);
+				t.putExtra(CommandActivity.EXTRA_PARCEL_DEN,
+						(int) Math.floor(Double.parseDouble(density.getText()
+								.toString())));
+				t.putExtra(CommandActivity.EXTRA_PARCEL_WEIGHT,
+						(int) Math.floor(Double.parseDouble(weight.getText()
+								.toString()) + 0.5d));
+				startActivity(t);
+			}
+		});
+		com.setVisibility(View.GONE);
+
+		TextWatcher watcher = new TextWatcher() {
+
+			@Override
+			public void afterTextChanged(Editable s) {
+				Double densityVal, pmgVal, weightVal;
+				if (!pmg.getText().toString().equals("")
+						&& !density.getText().toString().equals("")) {
+					densityVal = Double.parseDouble(density.getText()
+							.toString());
+					pmgVal = Double.parseDouble(pmg.getText().toString());
+					weightVal = densityVal * (pmgVal / 100);
+					weight.setText(Integer.toString((int) Math
+							.floor(weightVal + 0.5d)));
+					com.setVisibility(View.VISIBLE);
+
+				}
+			}
+
+			@Override
+			public void beforeTextChanged(CharSequence s, int start, int count,
+					int after) {
+			}
+
+			@Override
+			public void onTextChanged(CharSequence s, int start, int before,
+					int count) {
+			}
+		};
+		density.addTextChangedListener(watcher);
+		pmg.addTextChangedListener(watcher);
+
 	}
-	
+
 	/*
 	 * (non-Javadoc)
 	 * 
@@ -55,7 +124,6 @@ public class ConverterActivity extends AbstractBaseActivity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 
-		
 		// Remove itself from the default menu
 		menu.removeItem(R.id.action_converter);
 
